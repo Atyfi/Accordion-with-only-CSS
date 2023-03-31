@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background: url(images/Background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container .tab{
+    position: relative;
+    width: 80vw;
+    height: auto;
+    background-color: rgba(255,255,255, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.container .tab input{
+    appearance: none;
+}
+
+.container .tab input:checked ~ .content{
+    max-height: 120px;
+    transition: 1s;
+}
+
+
+.container .tab input:checked ~ label::after{
+    transform: rotate(135deg);
+    color: rgba(26, 24, 24, 0.5);
+    transition: 1s;
+}
+
+.container .tab input:checked ~ label h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    font-size: 5em;
+    z-index: -2;
+    opacity: 0.3;
+    border-radius: 20px;
+}
+
+.container .tab label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.container .tab label::after{
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container .tab:hover label::after{
+
+    color: rgba(26, 24, 24, 0.5);
+}
+
+.container .tab label h2{
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.container .tab:nth-child(1) label h2{
+    background: linear-gradient( 130deg,orange,red )
+}
+
+.container .tab:nth-child(2) label h2{
+    background: linear-gradient( 130deg,skyblue,blue )
+}
+
+.container .tab:nth-child(3) label h2{
+    background: linear-gradient( 130deg,yellowgreen,green )
+}
+
+.container .tab:nth-child(4) label h2{
+    background: linear-gradient( 130deg,orange,yellow )
+}
+
+.container .tab label h3{
+    margin-left: 10px;    
+}
+
+.container .tab .content{
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.container .tab .content p{
+    margin: 0px 20px 20px 20px;
+    color: black;
+    text-align: justify;
+}
